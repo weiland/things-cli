@@ -10,7 +10,7 @@ const defaultOptions = {
   // titles: '',
   when: 'today',
   reveal: true,
-  // 'show-quick-entry': true,
+  'show-quick-entry': true,
   // completed: true,
   // canceled: true,
 };
@@ -37,7 +37,7 @@ things.search = buildUrl.bind(null, Commands.SEARCH);
 
 const error = (message) => console.error(message) && process.exit(1);
 
-const execute = (args) => {
+const createUrl = (args) => {
   if (!args || args.length <= 1) {
     error('Insufficient argutments');
   }
@@ -49,8 +49,8 @@ const execute = (args) => {
   }
 
   const url = things.add({title: options});
-  console.log(url);
+  return url;
 };
 
 
-module.exports = execute;
+module.exports = createUrl;

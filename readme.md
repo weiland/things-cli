@@ -15,4 +15,5 @@ npm i
 ## Usage
 ```shell
 node test.js add item
+node test.js add 'longer item'
 ```
