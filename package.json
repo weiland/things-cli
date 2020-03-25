@@ -1,0 +1,12 @@
+{
+  "name": "things-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": ["things", "thigns app", "things todo", "todo", "culturedcode", "thins"],
+  "author": "Pascal Weiland <pasweiland@gmail.com>",
+  "license": "ISC"
+}
