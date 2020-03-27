@@ -1,8 +1,13 @@
-const { execSync } = require('child_process');
-const createUrl = require('./things');
+const things = require('./things');
+const cli = require('./cli');
+
+console.log(`Add: ${things.add({title: 'test'})}`);
+console.log(`Search: ${things.search({query: 'test'})}`);
 
 const args = process.argv.slice(2);
-const url = createUrl(args);
-console.log(`Url: ${url}`);
+if (args.length === 0) {
+  process.exit(0);
+}
+const url = cli(args);
+console.log(`Cli: ${url}`);
 
-execSync(`open '${url}'`);

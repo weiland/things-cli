@@ -1,9 +1,6 @@
-const THINGS_BASE = 'things:///';
+const Commands = require('./commands');
 
-const Commands = {
-  ADD: 'add',
-  SEARCH: 'search',
-};
+const THINGS_BASE = 'things:///';
 
 const defaultOptions = {
   // title: '',
@@ -34,23 +31,4 @@ const things = {};
 things.add = buildUrl.bind(null, Commands.ADD);
 things.search = buildUrl.bind(null, Commands.SEARCH);
 
-
-const error = (message) => console.error(message) && process.exit(1);
-
-const createUrl = (args) => {
-  if (!args || args.length <= 1) {
-    error('Insufficient argutments');
-  }
-
-  const [command, ...options] = args;
-
-  if (command != Commands.ADD) {
-    error(`Invalid command '${command}' `);
-  }
-
-  const url = things.add({title: options});
-  return url;
-};
-
-
-module.exports = createUrl;
+module.exports = things;
